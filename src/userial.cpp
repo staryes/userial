@@ -3,7 +3,7 @@
 #include <string.h>
 #include <termios.h>
 #include <unistd.h>
-
+#include <stdio.h>
 #include "userial.h"
 
 int set_interface_attribs (int fd, int speed, int parity)
@@ -13,7 +13,7 @@ int set_interface_attribs (int fd, int speed, int parity)
     if (tcgetattr (fd, &tty) != 0)
     {
         //error_message ("error %d from tcgetattr", errno);
-        printf ("error %d from tcgetattr", errorno);
+        printf ("error %d from tcgetattr", errno);
         return -1;
     }
 
@@ -93,7 +93,7 @@ void userial_write(int fd, char *out, int outLength)
 
 int userial_read(int fd, char* buf)
 {
-    int n = read(fd, buf, sizeof buf);
+    int n = read(fd, buf, 100);
 
     return n;
 }
