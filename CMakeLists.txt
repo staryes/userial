@@ -1,0 +1,9 @@
+PROJECT( hsvs_project )
+#FIND_PACKAGE( OpenCV REQUIRED )
+cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
+
+#set (CMAKE_CXX_STANDARD 11)
+SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(CMAKE_BINARY_DIR ${PROJECT_BINARY_DIR}/bin)
+
+add_subdirectory(src)
