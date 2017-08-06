@@ -31,7 +31,7 @@
 #ifndef USERIAL_H
 #define USERIAL_H
 
-//#include <errno.h>
+#include <errno.h>
 #include <fcntl.h>
 #include <string.h>
 #include <termios.h>
